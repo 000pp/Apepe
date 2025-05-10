@@ -3,15 +3,17 @@ console = Console()
 
 def exported(target) -> None:
     """
-    Lists exported activities, services, receivers, and providers in the Android manifest.
+    Lists activities, services, receivers, and providers from AndroidManifest.xml file.
     """
 
     manifest = target.get_android_manifest_xml()
     endpoints = ["activity", "service", "receiver", "provider"]
 
     for endpoint in endpoints:
-        console.print(f"\n[green][+][/] App {endpoint}s", highlight=False)
-        console.print(f" [green]\\_[/] Main Activity: [yellow]{target.get_main_activity()}[/]")
+        console.print(f"\n[green][+][/] {endpoint.capitalize()}:", highlight=False)
+
+        if(endpoint == "activity"):
+            console.print(f" [green]\\_[/] Main Activity: [yellow]{target.get_main_activity()}[/]")
 
         for element in manifest.findall(f".//{endpoint}"):
             name = element.get("{http://schemas.android.com/apk/res/android}name")
@@ -22,4 +24,4 @@ def exported(target) -> None:
                 exported = 'True' if has_intent_filter else 'False'
 
             color = "green" if exported.lower() == 'true' else 'red'
-            console.print(f'   \\_ {endpoint.capitalize()}: [yellow]{name}[/] - Exported: [{color}]{exported}[/]')
+            console.print(f'   \\_ [yellow]{name}[/] | Exported: [{color}]{exported}[/]')

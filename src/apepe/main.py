@@ -41,8 +41,7 @@ def perform_checks(apk_file, list_scripts, deeplink) -> None:
         console.print("[red][!][/] File extension is not [b].apk[/], please check your file or input")
         return True
 
-    file_size: int = path.getsize(file_name)
-    console.print(f"[yellow][!][/] Checking [yellow]{file_name}[/]. File size is [yellow]{file_size}[/] bytes", highlight=False)
+    console.print(f"[yellow][!][/] APK: [yellow]{file_name}[/]", highlight=False)
 
     extract_apk(file_name)
 
@@ -58,14 +57,12 @@ def extract_apk(file_name) -> None:
     target_dir = current_dir.joinpath(normal_dir_name)
 
     try:
-        console.print(f"[yellow][!][/] Creating [yellow]{target_dir}[/] folder", highlight=False)
+        console.print(f"[yellow][!][/] Extraction folder: [yellow]{target_dir}[/]", highlight=False)
 
         if target_dir.exists():
             rmtree(target_dir)
         
         target_dir.mkdir(parents=True, exist_ok=True)
-
-        console.print(f"[yellow][!][/] Extracting information from files on [yellow]{normal_dir_name}[/] folder", highlight=False)
         
         with ZipFile(file_name, mode="r") as archive:
             archive.extractall(path=normal_dir_name)
@@ -76,7 +73,7 @@ def extract_apk(file_name) -> None:
         console.print(f"[red][!][/] APK file '{file_name}' not found.")
     
     except PermissionError:
-        console.print(f"[red][!][/] Permission denied while creating '{target_dir}'.")
+        console.print(f"[red][!][/] Permission denied while creating {target_dir}.")
 
     except (OSError, BadZipFile) as error:
         console.print(f"[red][!][/] Error processing APK: {error}")
@@ -89,7 +86,7 @@ def apk_info_extraction(file_name, normal_dir_name) -> None:
     """
 
     apk_file = APK(file_name)
-    console.print(f"[green][+][/] Target: {apk_file.get_package()}")
+    console.print(f"\n[green][+][/] Package name: {apk_file.get_package()}")
 
     console.print("\n[green][+][/] App signature(s):", highlight=False)
     package_signature_V1 : bool = apk_file.is_signed_v1()

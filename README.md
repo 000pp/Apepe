@@ -12,7 +12,6 @@
     <img src="https://img.shields.io/github/issues/oppsec/Apepe?color=orange&logo=github&logoColor=orange&style=for-the-badge">
     <img src="https://img.shields.io/github/stars/oppsec/Apepe?color=orange&label=STARS&logo=github&logoColor=orange&style=for-the-badge">
     <img src="https://img.shields.io/github/forks/oppsec/Apepe?color=orange&logo=github&logoColor=orange&style=for-the-badge">
-    <img src="https://img.shields.io/github/languages/code-size/oppsec/Apepe?color=orange&logo=github&logoColor=orange&style=for-the-badge">
 </p>
 
 ___
@@ -22,22 +21,13 @@ ___
 
 <br>
 
-### ⚡ Installing / Getting started
+### ⚡ Getting started
 
 A quick guide of how to install and use Apepe.
 
-```shell
-1. git clone https://github.com/oppsec/Apepe.git
-2. pip install -r requirements.txt --break-system-packages
-3. python3 main -h
-```
-
-<br>
-
-### ⚙️ Pre-requisites
-- [Python](https://www.python.org/downloads/) installed on your machine
-- APK file from the targeted app
-- Androguard library >= 4.1.2
+1. `git clone https://github.com/oppsec/Apepe.git`
+2. `pip install -r requirements.txt --break-system-packages`
+3. `python3 main -h`
 
 <br>
 
@@ -51,7 +41,7 @@ A quick guide of how to install and use Apepe.
 
 ### 🖼️ Preview
 
-<img src="https://i.imgur.com/UAnF9k1.png" width=800>
+<img src="https://i.imgur.com/myZOPz7.png" width=800>
 
 <br>
 
@@ -59,14 +49,13 @@ A quick guide of how to install and use Apepe.
 
 A quick guide of how to contribute with the project.
 
-```shell
 1. Create a fork from Apepe repository
-2. Download the project with git clone https://github.com/your/Apepe.git
-3. cd Apepe/
+2. Download the project with `git clone https://github.com/your/Apepe.git`
+3. `cd Apepe/`
 4. Make your changes
 5. Commit and make a git push
 6. Open a pull request
-```
+
 
 <br>
 

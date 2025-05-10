@@ -1,3 +1,6 @@
+## v1.5 [10/05/2025]
+- Minor changes
+
 ## v1.4 [24/02/2025]
 - Show if activity, service or/and provider is exported or not
 - Overwrite existing extraction folder
